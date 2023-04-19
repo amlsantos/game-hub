@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "vite --port 4000",
+    "build": "tsc && vite build --sourcemap",
+    "preview": "vite preview",
+    "test": ""
   },
   "dependencies": {
     "react": "^18.2.0",
