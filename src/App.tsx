@@ -4,15 +4,16 @@ import { GameGrid } from "./components/GameGrid";
 import { GenreList } from "./components/GenreList";
 
 function App() {
-  const template = { base: `"nav" "main"`, lg: `"nav nav" "aside main"` };
+  const areas = { base: `"nav" "main"`, lg: `"nav nav" "aside main"` };
+  const columns = { base: `1fr`, xl: `300px 1fr` };
 
   return (
-    <Grid templateAreas={template}>
+    <Grid templateAreas={areas} templateColumns={columns}>
       <GridItem area="nav">
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside">
+        <GridItem area="aside" paddingX={5}>
           <GenreList />
         </GridItem>
       </Show>

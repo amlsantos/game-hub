@@ -17,7 +17,7 @@ export const GameGrid = () => {
   return (
     <>
       {error && <Text>{error}</Text>}
-      <SimpleGrid columns={responsiveColumns} spacing={10}>
+      <SimpleGrid columns={responsiveColumns} spacing={3}>
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameCardContainer key={skeleton}>
