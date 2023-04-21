@@ -18,15 +18,20 @@ export const useData = <T>(
 
   useEffect(
     () => {
-      const controller = new AbortController();
+      setIsLoading(true);
+      setData([]);
+
       console.log("fetching on ", endpoint, " with config ", requestConfig);
 
+      const controller = new AbortController();
       apiClient
         .get<FetchResponse<T>>(endpoint, {
           signal: controller.signal,
           ...requestConfig,
         })
-        .then((res) => setData(res.data.results))
+        .then((res) => {
+          setData(res.data.results);
+        })
         .catch((error) => {
           console.error(error.message);
 
