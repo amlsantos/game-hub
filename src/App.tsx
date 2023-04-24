@@ -19,6 +19,7 @@ export interface GameQuery {
 function App() {
   const areas = { base: `"nav" "main"`, lg: `"nav nav" "aside main"` };
   const columns = { base: `1fr`, xl: `300px 1fr` };
+
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (

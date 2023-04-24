@@ -25,3 +25,5 @@ dist-ssr
 
 # To prevent leeking enviroment variables
 .env.*
+
+.vercel
