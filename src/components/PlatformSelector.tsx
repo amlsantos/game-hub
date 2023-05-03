@@ -22,7 +22,7 @@ export const PlatformSelector = ({
         {selectedPlatform?.name || "Select a platform"}
       </MenuButton>
       <MenuList>
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             bgColor={
               selectedPlatform?.id === platform.id ? "gray.800" : undefined
