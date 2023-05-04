@@ -1,4 +1,4 @@
-import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { Center, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { GameQuery } from "../App";
@@ -34,7 +34,12 @@ export const GameGrid = ({ gameQuery }: Props) => {
       dataLength={fetchedGamesCount}
       hasMore={!!hasNextPage}
       next={() => fetchNextPage()}
-      loader={<Spinner />}
+      style={{ overflow: "hidden" }}
+      loader={
+        <Center h="200px" color="white">
+          <Spinner size={"xl"} />
+        </Center>
+      }
     >
       <SimpleGrid columns={responsiveColumns} spacing={6} paddingY={10}>
         {isLoading &&
