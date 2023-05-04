@@ -8,8 +8,8 @@ interface Props {
 }
 
 export const GameHeading = ({ gameQuery }: Props) => {
-  const genre = useGenre(gameQuery.genreId);
-  const platform = usePlatform(gameQuery.platformId);
+  const genre = useGenre(gameQuery.genreId ?? -1);
+  const platform = usePlatform(gameQuery.platformId ?? -1);
 
   const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
 

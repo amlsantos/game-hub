@@ -13,7 +13,7 @@ export const PlatformSelector = ({
   selectedPlatformId,
 }: Props) => {
   const { data, error } = usePlatforms();
-  const selectedPlatform = usePlatform();
+  const selectedPlatform = usePlatform(selectedPlatformId ?? -1);
 
   if (error) return null;
 
@@ -25,9 +25,6 @@ export const PlatformSelector = ({
       <MenuList>
         {data?.results.map((platform) => (
           <MenuItem
-            bgColor={
-              selectedPlatformId === platform.id ? "gray.800" : undefined
-            }
             isFocusable={false}
             key={platform.id}
             onClick={() => {
