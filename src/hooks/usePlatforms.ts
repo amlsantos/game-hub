@@ -10,7 +10,7 @@ export interface Platform {
 
 const apiClient = new APIClient<Platform>("/platforms/lists/parents");
 
-export const usePlatform = () => {
+export const usePlatforms = () => {
   const data: FetchResponse<Platform> = {
     count: platforms.length,
     results: platforms,
@@ -25,4 +25,4 @@ export const usePlatform = () => {
   });
 };
 
-export default usePlatform;
+export default usePlatforms;
