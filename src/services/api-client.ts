@@ -4,7 +4,7 @@ const apiKey = import.meta.env.DEV
   ? import.meta.env.VITE_API_KEY
   : process.env.API_KEY;
 
-export const axiosInstance = axios.create({
+const axiosInstance = axios.create({
   baseURL: "https://api.rawg.io/api",
   params: {
     key: apiKey,
