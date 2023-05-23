@@ -1,9 +1,10 @@
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/spinner";
 import { useParams } from "react-router-dom";
+import { ExpandableText } from "../components/ExpandableText";
 import useGame from "../hooks/useGame";
 
-export const GameDetailsPage = () => {
+export const GameDetailPage = () => {
   const { slug } = useParams();
   var { data: game, error, isLoading } = useGame(slug!);
 
@@ -12,8 +13,10 @@ export const GameDetailsPage = () => {
 
   return (
     <>
-      <Heading>{game.name}</Heading>
-      <Text fontSize={"2xl"}>{game.description_raw}</Text>
+      <Heading fontSize={"5xl"} marginBottom={"3"}>
+        {game.name}
+      </Heading>
+      <ExpandableText>{game.description_raw}</ExpandableText>
     </>
   );
 };
