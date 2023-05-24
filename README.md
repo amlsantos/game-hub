@@ -16,6 +16,7 @@ This project was built using the following technologies:
 - Chakra UI
 - Axios
 - React-Query
+- React-Router
 - Zustand
 - RAWG Video Games Database API
 
